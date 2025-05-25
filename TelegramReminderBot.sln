@@ -5,9 +5,9 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelegramReminderBot", "TelegramReminderBot\TelegramReminderBot.csproj", "{4B862154-12FF-4A76-968A-D6B228485F54}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F7822AFA-4BE3-40D1-96F4-E41C7B94F7F4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{13BBBE1D-3195-40A8-ADD2-A0150F3A69C2}"
 	ProjectSection(SolutionItems) = preProject
-		Procfile.txt = Procfile.txt
+		Railway.toml = Railway.toml
 	EndProjectSection
 EndProject
 Global

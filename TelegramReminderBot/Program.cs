@@ -11,6 +11,15 @@ namespace TelegramReminderBot
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            // Set port for deployment (Railway) but allow local default behavior
+            var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+            if (!builder.Environment.IsDevelopment())
+            {
+                builder.WebHost.UseUrls($"http://*:{port}");
+            }
+            builder.Services.AddHealthChecks();
+
+
             builder.Services.AddControllers();
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
@@ -28,6 +37,8 @@ namespace TelegramReminderBot
 
 
             var app = builder.Build();
+
+            app.UseHealthChecks("/health");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
